@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${user}">$这事是 奥术大师</h1>
+    <h2 th:text="${sex}"></h2>
+    <li th:each="item : ${list}">
+        <span th:text="${item}"></span>
+    </li>
+
+    <select>
+
+        <option  th:each="mp:${map}" th:selected="*{mp.key=='B'}"  th:attr="value=*{mp.key}" th:text="*{mp.value}"></option>
+    </select>
+    <div th:text="${ischecked}"></div>
+    <input th:text="${user}" type="checkbox" th:checked="${ischecked =='B'}" value="A">
+</body>
+</html>
